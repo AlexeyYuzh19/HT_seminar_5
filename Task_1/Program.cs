@@ -9,6 +9,8 @@
 Console.Clear();
 Console.WriteLine("Hello, World!");
 
+// Методы
+
 int[] FillArrayWithRandomNumbers(int leftRange, int rightRange)
 {
     int size;
@@ -73,6 +75,8 @@ int CheckInputNumber(string Text)
     Console.ResetColor();
     return number;
 }
+
+// Код решения
 
 const int Left_Range = 99;
 const int Right_Range = 999;
