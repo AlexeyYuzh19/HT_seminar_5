@@ -38,7 +38,7 @@ int[] FillArrayWithRandomNumbers(int leftRange, int rightRange)
     Random rand = new Random();
     for(int i = 0; i < tempArr.Length; i++)
     {
-        tempArr[i] = rand.Next(leftRange, rightRange + 1);
+        tempArr[i] = rand.Next(leftRange, rightRange +1);
     }
 
     return tempArr;
@@ -78,7 +78,7 @@ int CheckInputNumber(string Text)
 
 // Код решения
 
-const int Left_Range = 99;
+const int Left_Range = 100;
 const int Right_Range = 999;
 
 int[] arr = FillArrayWithRandomNumbers(Left_Range, Right_Range);
