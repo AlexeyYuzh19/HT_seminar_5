@@ -10,41 +10,16 @@ Console.WriteLine("Hello, World!");
 
 // Методы
 
-
 int[] FillArrayWithRandomNumbers(int size, int leftRange, int rightRange)
 {
-    /*int size;
-
-    while (true)
-    {
-        size = CheckInputNumber("\nВведите размер массива : ");
-        if (size < 0)
-        { 
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Задано отрицательное значение, попробуйте еще раз.");
-            Console.ResetColor();
-        }
-        else if (size == 0)
-        { 
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Задано нулевое значение, попробуйте еще раз.");
-            Console.ResetColor();
-        }
-        else 
-            break;
-    }
-    */
     int[] tempArr = new int[size];
     Random rand = new Random();
     for(int i = 0; i < tempArr.Length; i++)
     {
         tempArr[i] = rand.Next(leftRange, rightRange);
     }
-
     return tempArr;
 }
-
-
 void NAMBERS (out int size, out int leftRange, out int rightRange)
 {
     while (true)
@@ -74,9 +49,9 @@ void NAMBERS (out int size, out int leftRange, out int rightRange)
 void SumNumbersOddIndex(int[] arr, out int Summa)
 {
     Summa = 0;
-    for(int i = 1; i < arr.Length; i=i+2)
+    for(int i = 1; i < arr.Length; i += 2)
     {
-        Summa =Summa + arr[i];
+        Summa += arr[i];
     }
 }
 
@@ -105,9 +80,6 @@ int CheckInputNumber(string Text)
 
 // Код решения
 
-// const int Left_Range = 100;
-// const int Right_Range = 999;
-
 NAMBERS (out int size, out int leftRange, out int rightRange);
 
 int[] arr = FillArrayWithRandomNumbers(size, leftRange, rightRange);
@@ -115,9 +87,8 @@ int[] arr = FillArrayWithRandomNumbers(size, leftRange, rightRange);
 SumNumbersOddIndex(arr, out int Summa);
 
 Console.ForegroundColor = ConsoleColor.Green;
-System.Console.WriteLine("\nОдномерный массив заполненный случайными числами :\n\n[" + string.Join(", ", arr) + "]");
+System.Console.WriteLine("\nОдномерныйный массив заполненный случайными числами :\n\n[" + string.Join(", ", arr) + "]");
 
 Console.ForegroundColor = ConsoleColor.Blue;
 System.Console.WriteLine($"\nСумма элементов, стоящих на нечётных позициях в массиве :  {Summa}\n");
 Console.ResetColor();
-
