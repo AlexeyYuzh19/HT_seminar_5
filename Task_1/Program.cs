@@ -64,10 +64,9 @@ int CheckInputNumber(string Text)
     {
         Console.Write(Text);
         text = Console.ReadLine();
-        if (int.TryParse(text, out number))
-        {
-            break;
-        }
+        
+        if (int.TryParse(text, out number)) break;
+        
         Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("Заданное значение числа не соответствует критерию, попробуйте еще раз.");
         Console.ResetColor();
