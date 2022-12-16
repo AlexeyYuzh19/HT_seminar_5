@@ -25,12 +25,12 @@ void NAMBERS (out int size, out int leftRange, out int rightRange)
     while (true)
     {
         size = CheckInputNumber("Введите размер массива : ");
-        if (size < 0) 
-            Console.WriteLine("Задано отрицательное значение, попробуйте еще раз.");
-        else if (size == 0) 
-            Console.WriteLine("Задано нулевое значение, попробуйте еще раз.");
-        else 
-            break;
+
+        if (size < 0) Console.WriteLine("Задано отрицательное значение, попробуйте еще раз.");
+
+        else if (size == 0) Console.WriteLine("Задано нулевое значение, попробуйте еще раз.");
+
+        else break;
     }
     while (true)
     {
@@ -38,10 +38,8 @@ void NAMBERS (out int size, out int leftRange, out int rightRange)
 
        rightRange = CheckInputNumber("Введите величину максимального значения массива : ");
 
-       if (leftRange <= rightRange) 
-       {
-          break;
-       }
+       if (leftRange <= rightRange) break;
+       
     Console.WriteLine("Заданное значение левого края массива больше правого, попробуйте еще раз.");
     } 
 }
@@ -66,10 +64,9 @@ int CheckInputNumber(string Text)
     {
         Console.Write(Text);
         text = Console.ReadLine();
-        if (int.TryParse(text, out number))
-        {
-            break;
-        }
+        
+        if (int.TryParse(text, out number)) break;
+        
         Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("Заданное значение числа не соответствует критерию, попробуйте еще раз.");
         Console.ResetColor();
