@@ -15,7 +15,7 @@ double[] FillArrayWithRandomNumbers(int size, int leftRange, int rightRange)
     Random rand = new Random();
     for(int i = 0; i < tempArr.Length; i++)
     {
-        tempArr[i] = rand.Next(leftRange, rightRange) + Math.Round(Math.Abs(rand.NextDouble()), 3);
+        tempArr[i] = rand.Next(leftRange, rightRange) + Math.Round(rand.NextDouble(), 3);
     }
     return tempArr;
 }
@@ -92,7 +92,7 @@ Console.ForegroundColor = ConsoleColor.Green;
 System.Console.WriteLine($"\nОдномерныйный массив заполненный случайными вещественными числами от {leftRange} до {rightRange} :\n\n[ " + string.Join("; ", arr) + " ]");
 
 Console.ForegroundColor = ConsoleColor.Blue;
-System.Console.WriteLine($"\nРазность между максимальным {max} и минимальным {min} элементами массива равна :  {max - min}\n");
+System.Console.WriteLine($"\nРазность между максимальным {max} и минимальным {min} элементами массива равна :  {Math.Round((max - min), 3)}\n");
 Console.ResetColor();
 
 
